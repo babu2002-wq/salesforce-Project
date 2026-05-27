@@ -17,7 +17,7 @@ public class PracticeSOQL {
         
         for(Opportunity opp:newopps){
             if(totalopps.get(opp.AccountId)>3){
-                opp.addError('3 opp are already there');
+                opp.addError('More than 3 opportunities for this Account');
             }
         }
         
