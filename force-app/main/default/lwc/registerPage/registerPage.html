@@ -1,0 +1,97 @@
+<template>
+    <lightning-card title="Register" icon-name="standard:employee">
+        <lightning-record-edit-form
+            object-api-name="Employee__c"
+            onsuccess={handleSuccess}
+            onsubmit={handleSubmit}
+        >
+            <lightning-messages></lightning-messages>
+            <!-- Name Field -->
+            <div class="slds-m-bottom_small">
+                <lightning-input-field 
+                    field-name="Name" 
+                    required
+                    message-when-value-missing="Please enter employee name">
+                </lightning-input-field>
+            </div>
+
+            <!-- Address -->
+            <div class="slds-m-bottom_small">
+                <lightning-input-field field-name="Address__c"></lightning-input-field>
+            </div>
+
+            <!-- Phone -->
+            <div class="slds-m-bottom_small">
+                <lightning-input-field 
+                    field-name="Phone_No__c" 
+                    type="tel"
+                    required
+                    message-when-value-missing="Please enter phone number">
+                </lightning-input-field>
+            </div>
+
+            <!-- Department -->
+            <div class="slds-m-bottom_small">
+                <lightning-input-field 
+                    field-name="Department__c"
+                    required
+                    message-when-value-missing="Please select department">
+                </lightning-input-field>
+            </div>
+
+            <!-- Email -->
+            <div class="slds-m-bottom_small">
+                <lightning-input-field 
+                    field-name="Email__c" 
+                    type="email"
+                    required
+                    message-when-value-missing="Please enter email address"
+                    message-when-type-mismatch="Please enter a valid email">
+                </lightning-input-field>
+            </div>
+
+            <!-- Username -->
+            <div class="slds-m-bottom_small">
+                <lightning-input-field 
+                    field-name="Username__c"
+                    required
+                    message-when-value-missing="Please choose a username">
+                </lightning-input-field>
+            </div>
+
+            <!-- Password (custom implementation) -->
+            <div class="slds-m-bottom_small">
+                <lightning-input
+                    type="password"
+                    label="Password"
+                    value={passwordValue}
+                    onchange={handlePasswordChange}
+                    required
+                    min-length="8"
+                    message-when-too-short="Password must be at least 8 characters"
+                    message-when-value-missing="Password is required"
+                    class="password-field"
+                ></lightning-input>
+            </div>
+
+            <!-- User Type -->
+            <div class="slds-m-bottom_medium">
+                <lightning-input-field field-name="User_Type__c"></lightning-input-field>
+            </div>
+
+            <div class="slds-m-top_medium">
+                <lightning-button 
+                    variant="brand" 
+                    type="submit" 
+                    label="Register"
+                    class="slds-m-right_small"
+                ></lightning-button>
+                <lightning-button 
+                    variant="neutral" 
+                    label="Cancel" 
+                    onclick={handleCancel}
+                ></lightning-button>
+            </div>
+        </lightning-record-edit-form>
+    </lightning-card>
+</template>

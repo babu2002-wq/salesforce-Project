@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Case Details">
+        <div class="slds-p-around_medium">
+            <lightning-input label="Subject *" required data-field="subject" onchange={handleChange}></lightning-input>
+            <lightning-textarea label="Description" data-field="description" onchange={handleChange}></lightning-textarea>
+
+            <lightning-combobox
+                label="Priority"
+                data-field="priority"
+                value={priority}
+                options={priorityOptions}
+                onchange={handleChange}>
+            </lightning-combobox>
+        </div>
+    </lightning-card>
+</template>

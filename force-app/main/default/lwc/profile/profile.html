@@ -1,0 +1,54 @@
+<template>
+    <lightning-card title="Employee Profile">
+        <template if:true={employee}>
+            <div class="slds-m-around_medium">
+                <div class="slds-grid slds-wrap">
+                    <!-- Column 1 -->
+                    <div class="slds-col slds-size_1-of-2 slds-p-around_small">
+                        <div class="slds-m-bottom_small">
+                            <p><strong>Name:</strong></p>
+                            <lightning-formatted-text value={employee.Name}></lightning-formatted-text>
+                        </div>
+
+                        <div class="slds-m-bottom_small">
+                            <p><strong>Email:</strong></p>
+                            <lightning-formatted-email value={employee.Email__c}></lightning-formatted-email>
+                        </div>
+
+                        <div class="slds-m-bottom_small">
+                            <p><strong>Phone:</strong></p>
+                            <lightning-formatted-phone value={employee.Phone_No__c}></lightning-formatted-phone>
+                        </div>
+
+                        <div class="slds-m-bottom_small">
+                            <p><strong>Date of Birth:</strong></p>
+                            <lightning-formatted-date-time value={employee.DOB__c} year="numeric" month="long" day="2-digit"></lightning-formatted-date-time>
+                        </div>
+                    </div>
+
+                    <!-- Column 2 -->
+                    <div class="slds-col slds-size_1-of-2 slds-p-around_small">
+                        <div class="slds-m-bottom_small">
+                            <p><strong>Department:</strong></p>
+                            <lightning-formatted-text value={employee.Department__c}></lightning-formatted-text>
+                        </div>
+
+                        <div class="slds-m-bottom_small">
+                            <p><strong>Address:</strong></p>
+                            <lightning-formatted-text value={formattedAddress}></lightning-formatted-text>
+                        </div>
+
+                        <div class="slds-m-bottom_small">
+                            <p><strong>Username:</strong></p>
+                            <lightning-formatted-text value={employee.Username__c}></lightning-formatted-text>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template if:true={error}>
+            <p>Error loading employee details.</p>
+        </template>
+    </lightning-card>
+</template>

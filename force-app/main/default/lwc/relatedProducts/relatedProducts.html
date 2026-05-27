@@ -1,0 +1,102 @@
+<template>
+
+    <div class="wrapper">
+
+        <h2 class="title">Related Products</h2>
+
+        <div class="slider">
+
+            <template for:each={products} for:item="product">
+
+                <div key={product.id} class="card">
+
+                    <!-- MULTIPLE BADGES -->
+                    <template if:true={product.badges}>
+                        <div class="badge-container">
+
+                            <template for:each={product.badges} for:item="badge">
+                                <div key={badge} class="badge">
+                                    {badge}
+                                </div>
+                            </template>
+
+                        </div>
+                    </template>
+
+                    <!-- IMAGE -->
+                    <div class="image-box">
+                        <template if:true={product.imageUrl}>
+                            <img src={product.imageUrl} alt={product.name} />
+                        </template>
+
+                        <template if:false={product.imageUrl}>
+                            <div class="image-placeholder">
+                                No Image
+                            </div>
+                        </template>
+                    </div>
+
+                    <!-- INFO -->
+                    <div class="info">
+
+                        <!-- WISHLIST ICON -->
+                        <div class="wishlist-container">
+
+                            <lightning-button-icon
+                                icon-name="utility:favorite"
+                                alternative-text="Add to Wishlist"
+                                title="Add to Wishlist"
+                                variant="border-filled"
+                                size="small"
+                                data-id={product.id}
+                                onclick={handleAddToWishlist}
+                                disabled={product.isWishlistLoading}>
+                            </lightning-button-icon>
+
+                            <template if:true={product.isWishlistLoading}>
+                                <lightning-spinner
+                                    alternative-text="Adding to Wishlist"
+                                    size="small">
+                                </lightning-spinner>
+                            </template>
+
+                        </div>
+
+                        <!-- PRODUCT NAME -->
+                        <div class="name">
+                            {product.name}
+                        </div>
+
+                        <!-- PRICE -->
+                        <div class="price">
+                            ${product.price}
+                        </div>
+
+                        <!-- ADD TO CART -->
+                        <button
+                            class="btn"
+                            data-id={product.id}
+                            onclick={handleAddToCart}
+                            disabled={product.isDisabled}>
+
+                            <template if:true={product.isLoading}>
+                                <lightning-spinner size="small"></lightning-spinner>
+                            </template>
+
+                            <template if:false={product.isLoading}>
+                                Add To Cart
+                            </template>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </template>
+
+        </div>
+
+    </div>
+
+</template>

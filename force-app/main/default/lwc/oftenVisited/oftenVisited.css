@@ -1,0 +1,49 @@
+.container {
+    margin-top: 40px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+}
+
+.card {
+    border: 1px solid #eee;
+    padding: 12px;
+    background: white;
+    cursor: pointer;
+    min-width: 160px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.image {
+    width: 100%;
+    height: auto;
+}
+
+.name {
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.price {
+    font-weight: bold;
+    margin-top: 4px;
+}

@@ -1,0 +1,29 @@
+<template>
+    <lightning-accordion allow-multiple-sections-open>
+
+    <lightning-accordion-section label="Account">
+        {account.Name} — {account.Industry}
+    </lightning-accordion-section>
+
+    <lightning-accordion-section label="Contact">
+        {contact.FirstName} {contact.LastName}<br/>
+        {contact.Email}
+    </lightning-accordion-section>
+
+    <lightning-accordion-section label="Employment">
+        {employment.Company} — {employment.Role}
+    </lightning-accordion-section>
+
+    <lightning-accordion-section label="Opportunity">
+        {opportunity.Name} — {opportunity.Amount}
+    </lightning-accordion-section>
+
+</lightning-accordion>
+
+<div class="slds-m-top_medium">
+    <lightning-button label="Previous" onclick={previous}></lightning-button>
+    <lightning-button variant="brand" label="Submit" onclick={submit}></lightning-button>
+</div>
+
+    
+</template>

@@ -1,0 +1,44 @@
+<template>
+    <lightning-card title="User Panel">
+        <template if:true={jobAdvertisements}>
+            <template for:each={jobAdvertisements} for:item="job">
+                <div key={job.Id} class="slds-box slds-m-around_medium job-card">
+                    
+                    <h3>
+                        <a class="job-title" data-id={job.Id} onclick={handleJobClick}>
+                            {job.Job_Title__c}
+                        </a>
+                    </h3>
+
+                    
+                    <template if:true={job.isSelected}>
+                        <div class="job-details slds-m-top_medium">
+                            <p><strong>Roles and Responsibilities:</strong> {job.Roles_and_Responsibilities__c}</p>
+                            <p><strong>Years of Experience:</strong> {job.Years_of_Experience__c}</p>
+                            <lightning-button label="Apply Now" variant="brand" onclick={handleApply}
+                                data-id={job.Id}></lightning-button>
+                                <lightning-button label="Cancel" variant="neutral" onclick={handleCancelDetails} data-id={job.Id}></lightning-button>
+                        </div>
+                        <template if:true={selectedJob}>
+                        <lightning-card title="Apply for Job">
+                            <lightning-input label="Name" value={name} onchange={handleInputChange}
+                                data-field="name"></lightning-input>
+                            <lightning-input label="Contact No" value={contact} onchange={handleInputChange}
+                                data-field="contact" type="tel"></lightning-input>
+                            <lightning-input label="Email" value={email} onchange={handleInputChange}
+                                data-field="email" type="email"></lightning-input>
+                            <lightning-input label="Years of Experience" value={experience} onchange={handleInputChange}
+                                data-field="experience"></lightning-input>
+                            <lightning-button label="Submit Application" variant="brand"
+                                onclick={submitApplication}></lightning-button>
+                        </lightning-card>
+                    </template>
+                    </template>
+                </div>
+            </template>
+            
+                
+            
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Employee List">
+        <template if:true={employees}>
+            <div class="slds-m-around_medium">
+            <ul>
+                <template for:each={employees} for:item="employee">
+                    <li key={employee.Id}>
+                        <span class={employee.cssClass} data-id={employee.Id} onclick={handleEmployeeClick}>
+                            {employee.Name}
+                        </span>
+                    </li>
+                </template>
+            </ul>
+        </div>
+        </template>
+        <template if:false={employees}>
+            <p>No employees found.</p>
+        </template>
+    </lightning-card>
+</template>

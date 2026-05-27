@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Fires when a boat is selected</description>
+    <isExposed>true</isExposed>
+    <lightningMessageFields>
+        <description>Id of the selected boat</description>
+        <fieldName>boatId</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>Name of the selected boat</description>
+        <fieldName>boatName</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>Price of the selected boat</description>
+        <fieldName>boatPrice</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>Type of the selected boat</description>
+        <fieldName>boatType</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>Latitude of the boat location</description>
+        <fieldName>latitude</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>Longitude of the boat location</description>
+        <fieldName>longitude</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>Length of the boat location</description>
+        <fieldName>boatlength</fieldName>
+    </lightningMessageFields>
+    <masterLabel>Boat Selected Channel</masterLabel>
+</LightningMessageChannel>

@@ -1,0 +1,24 @@
+{
+  "type" : "sfdc_cms__trustedSites",
+  "title" : "trustedSites",
+  "contentBody" : {
+    "trustedSites" : [ {
+      "isActive" : true,
+      "source" : "https://js.braintreegateway.com",
+      "sourceName" : "Braintree_Assets"
+    }, {
+      "isActive" : true,
+      "source" : "https://assets.braintreegateway.com",
+      "sourceName" : "Braintree_JS"
+    }, {
+      "isActive" : true,
+      "source" : "https://*.paypal.com",
+      "sourceName" : "Paypal_Complete"
+    }, {
+      "isActive" : true,
+      "source" : "https://c.paypal.com",
+      "sourceName" : "C_Paypal"
+    } ]
+  },
+  "urlName" : "trustedsites"
+}

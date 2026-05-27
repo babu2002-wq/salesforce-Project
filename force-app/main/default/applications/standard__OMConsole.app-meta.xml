@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>true</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
+    <label>Order Management</label>
+    <navType>Console</navType>
+    <setupExperience>all</setupExperience>
+    <tabs>standard-Order</tabs>
+    <tabs>standard-CustomerWorkspace</tabs>
+    <tabs>standard-OmAnalytics</tabs>
+    <tabs>standard-PaymentsWorkspace</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>OMConsole_UtilityBar</utilityBar>
+    <workspaceConfig>
+        <mappings>
+            <tab>standard-CustomerWorkspace</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-OmAnalytics</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-Order</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-PaymentsWorkspace</tab>
+        </mappings>
+    </workspaceConfig>
+</CustomApplication>

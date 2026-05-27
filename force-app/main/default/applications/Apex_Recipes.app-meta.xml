@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>true</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
+    <label>Apex Recipes</label>
+    <navType>Standard</navType>
+    <tabs>Apex_Recipes</tabs>
+    <tabs>My_Courses</tabs>
+    <tabs>Semester_Exam</tabs>
+    <tabs>My_Exams</tabs>
+    <tabs>Attendance__c</tabs>
+    <tabs>Semester__c</tabs>
+    <tabs>Question__c</tabs>
+    <tabs>Exam_Answer__c</tabs>
+    <tabs>Exam__c</tabs>
+    <tabs>Answer_Option__c</tabs>
+    <tabs>Exam_Result__c</tabs>
+    <tabs>Attend__c</tabs>
+    <tabs>Program__c</tabs>
+    <tabs>Batch__c</tabs>
+    <tabs>Year__c</tabs>
+    <tabs>Course__c</tabs>
+    <tabs>Boat__c</tabs>
+    <tabs>BoatType__c</tabs>
+    <tabs>Campus__c</tabs>
+    <tabs>Course_Offering__c</tabs>
+    <tabs>Commission__c</tabs>
+    <tabs>Topic__c</tabs>
+    <tabs>Study_Material__c</tabs>
+    <tabs>Topic_Progress__c</tabs>
+    <tabs>Course_Progress__c</tabs>
+    <uiType>Lightning</uiType>
+</CustomApplication>

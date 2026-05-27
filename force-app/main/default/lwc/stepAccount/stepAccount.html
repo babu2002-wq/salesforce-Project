@@ -1,0 +1,29 @@
+<template>
+<lightning-input
+    label="Account Name"
+    data-field="Name"
+    required
+    value={account.Name}
+    onchange={handleChange}>
+</lightning-input>
+
+<lightning-input
+    label="Industry"
+    data-field="Industry"
+    required
+    value={account.Industry}
+    onchange={handleChange}>
+</lightning-input>
+
+<div class="slds-m-top_medium">
+    <lightning-button
+        variant="brand"
+        label="Next"
+        disabled={disableNext}
+        onclick={next}>
+    </lightning-button>
+</div>
+
+
+    
+</template>

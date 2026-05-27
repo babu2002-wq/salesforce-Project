@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Interviewer Panel">
+        <template if:true={applications}>
+            <lightning-datatable
+                key-field="Id"
+                data={applications}
+                columns={columns}
+                hide-checkbox-column
+                show-row-number-column>
+            </lightning-datatable>
+        </template>
+        <template if:false={applications}>
+            <p class="slds-p-around_medium">No applications found</p>
+        </template>
+    </lightning-card>
+</template>

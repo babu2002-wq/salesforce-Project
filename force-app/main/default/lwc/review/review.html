@@ -1,0 +1,59 @@
+<template>
+    <lightning-card title="Performance Review" icon-name="action:goal">
+        <template if:true={reviewData}>
+        <div class="slds-p-around_medium">
+            <p><strong>Current Review:</strong> {reviewData.Review__c}</p>
+
+            <!-- Button to show review input field -->
+            <lightning-button label="Update" onclick={handleUpdate}></lightning-button>
+
+            <!-- Review input field, shown only when 'Update' is clicked -->
+            <template if:true={showReviewField}>
+                <lightning-textarea label="Enter Review" onchange={handleReviewChange}></lightning-textarea>
+
+                <!-- Submit and Reject buttons -->
+                <lightning-button label="Submit" onclick={handleSubmit} class="slds-m-top_small"></lightning-button>
+                <lightning-button label="Reject" onclick={handleReject} class="slds-m-left_small slds-m-top_small"></lightning-button>
+            </template>
+
+            <!-- Rejection reason field, shown only when 'Reject' is clicked -->
+            <template if:true={showReasonField}>
+                <div class="slds-m-top_medium">
+                    <lightning-input label="Reason for Rejection" onchange={handleRejectionReasonChange}></lightning-input>
+                </div>
+            </template>
+        </div>
+        </template>
+
+        <template if:false={reviewData}>
+            <div class="slds-p-around_medium">
+                <p><strong>Current Review:</strong> No review given</p>
+    
+                <!-- Button to show review input field -->
+                <lightning-button label="Update" onclick={handleUpdate}></lightning-button>
+    
+                <!-- Review input field, shown only when 'Update' is clicked -->
+                <template if:true={showReviewField}>
+                    <lightning-textarea label="Enter Review" onchange={handleReviewChange}></lightning-textarea>
+    
+                    <!-- Submit and Reject buttons -->
+                    <lightning-button label="Submit" onclick={handleSubmit} class="slds-m-top_small"></lightning-button>
+                    <lightning-button label="Reject" onclick={handleReject} class="slds-m-left_small slds-m-top_small"></lightning-button>
+                </template>
+    
+                <!-- Rejection reason field, shown only when 'Reject' is clicked -->
+                <template if:true={showReasonField}>
+                    <div class="slds-m-top_medium">
+                        <lightning-input label="Reason for Rejection" onchange={handleRejectionReasonChange}></lightning-input>
+                    </div>
+                </template>
+            </div>
+        </template>
+
+            <!-- Error Handling -->
+            <template if:true={error}>
+                <p class="slds-text-color_error">Error: {error}</p>
+            </template>
+        
+    </lightning-card>
+</template>

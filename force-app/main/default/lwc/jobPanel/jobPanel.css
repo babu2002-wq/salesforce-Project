@@ -1,0 +1,25 @@
+.job-card {
+    border: 1px solid #dcdcdc;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.job-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000000;
+    cursor: pointer;
+}
+
+.job-title:hover {
+    color: #e9780f;
+}
+
+.job-details {
+    background: #f4f6f9;
+    padding: 1rem;
+    border-top: 1px solid #dcdcdc;
+}

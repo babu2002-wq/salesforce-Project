@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Employee__c</entityName>
+    <fieldName>User_Type__c</fieldName>
+    <masterLabel>Departments</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>Department__c</fieldNames>
+        <fieldNames>Email__c</fieldNames>
+        <fieldNames>Name</fieldNames>
+        <picklistValueName>Admin</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Name</fieldNames>
+        <picklistValueName>Employee</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Email__c</fieldNames>
+        <fieldNames>Username__c</fieldNames>
+        <picklistValueName>Interviewer</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>__MASTER__</recordTypeName>
+</PathAssistant>

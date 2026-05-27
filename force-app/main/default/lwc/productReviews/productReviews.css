@@ -1,0 +1,13 @@
+.review-card {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.stars {
+    color: orange;
+}
+
+.date {
+    font-size: 12px;
+    color: gray;
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Status --></label>
+    <name>Status__c</name>
+    <picklistValues>
+        <masterLabel>Applied</masterLabel>
+        <translation><!-- Applied --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Passed 1st Round</masterLabel>
+        <translation><!-- Passed 1st Round --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Passed 2nd Round</masterLabel>
+        <translation><!-- Passed 2nd Round --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Passed 3rd Round</masterLabel>
+        <translation><!-- Passed 3rd Round --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Passed Final Round</masterLabel>
+        <translation><!-- Passed Final Round --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rejected</masterLabel>
+        <translation><!-- Rejected --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

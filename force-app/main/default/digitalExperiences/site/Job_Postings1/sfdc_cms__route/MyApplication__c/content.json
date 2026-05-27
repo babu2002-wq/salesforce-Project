@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "MyApplication",
+  "contentBody" : {
+    "activeViewId" : "MyApplication",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-myapplication",
+    "urlPrefix" : "myapplication"
+  },
+  "urlName" : "myapplication"
+}

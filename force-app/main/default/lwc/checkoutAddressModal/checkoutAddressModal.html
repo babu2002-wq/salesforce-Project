@@ -1,0 +1,71 @@
+<template>
+
+    <section role="dialog" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+
+            <header class="slds-modal__header">
+                <h2 class="slds-text-heading_medium">
+                    {modalTitle}
+                </h2>
+            </header>
+
+            <div class="slds-modal__content slds-p-around_medium">
+
+                <lightning-input label="First Name" value={form.firstName} data-field="firstName" required
+                    onchange={handleInputChange}>
+                </lightning-input>
+
+                <lightning-input label="Middle Name" value={form.middleName} data-field="middleName"
+                    onchange={handleInputChange}>
+                </lightning-input>
+
+                <lightning-input label="Last Name" value={form.lastName} data-field="lastName" required
+                    onchange={handleInputChange}>
+                </lightning-input>
+
+                <lightning-input label="Company Name" value={form.companyName} data-field="companyName"
+                    onchange={handleInputChange}>
+                </lightning-input>
+
+                <!-- ✅ Dynamic Country Dropdown -->
+                <lightning-combobox label="Country" value={form.countryCode} options={countryOptions}
+                    onchange={handleCountryChange}>
+                </lightning-combobox>
+
+                <!-- ✅ Address Fields -->
+                <lightning-combobox label="State" value={form.provinceCode} options={stateOptions}
+                    onchange={handleStateChange}>
+                </lightning-combobox>
+
+                <!-- Street -->
+                <lightning-input label="Street" value={form.street} data-field="street" onchange={handleInputChange}>
+                </lightning-input>
+
+                <!-- City -->
+                <lightning-input label="City" value={form.city} data-field="city" onchange={handleInputChange}>
+                </lightning-input>
+
+                <!-- Postal Code -->
+                <lightning-input label="Postal Code" value={form.postalCode} data-field="postalCode"
+                    onchange={handleInputChange}>
+                </lightning-input>
+
+                <lightning-input type="checkbox" label="Make this my default address" checked={form.isDefault}
+                    onchange={handleCheckbox}>
+                </lightning-input>
+
+            </div>
+
+            <footer class="slds-modal__footer">
+                <lightning-button label="Cancel" onclick={close}></lightning-button>
+
+                <lightning-button variant="brand" label="Save" onclick={handleSave}>
+                </lightning-button>
+            </footer>
+
+        </div>
+    </section>
+
+    <div class="slds-backdrop slds-backdrop_open"></div>
+
+</template>

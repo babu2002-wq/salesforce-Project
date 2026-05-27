@@ -1,0 +1,35 @@
+<template>
+    <lightning-card title="Available Boats">
+        <!-- If boats exist, show them in grid -->
+        <template if:true={boats}>
+            <div class="boat-grid">
+                <template for:each={boats} for:item="boat">
+                    <lightning-card key={boat.Id} title={boat.Name} class="boat-card">
+                        <div class="slds-p-around_small">
+                            <a href="javascript:void(0);"
+                               data-id={boat.Id}
+                               data-name={boat.Name}
+                               data-lat={boat.Geolocation__Latitude__s}
+                               data-lon={boat.Geolocation__Longitude__s}
+                               data-pri={boat.Price__c}
+                               data-len={boat.Length__c}
+                               data-type={boat.BoatType__r.Name}
+                               onclick={handleBoatSelect}
+                               class="boat-link">
+                                {boat.Name}
+                            </a>
+                            <p><b>Price:</b> {boat.Price__c}</p>
+                            <p><b>Length:</b> {boat.Length__c} ft</p>
+                            <p><b>Type:</b> {boat.BoatType__r.Name}</p>
+                        </div>
+                    </lightning-card>
+                </template>
+            </div>
+        </template>
+
+        <!-- If no boats, show fallback message -->
+        <template if:false={boats}>
+            <p class="slds-p-around_medium">No boats available. Please select a Boat Type.</p>
+        </template>
+    </lightning-card>
+</template>

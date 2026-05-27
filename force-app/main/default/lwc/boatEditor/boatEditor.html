@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Boat Editor" icon-name="utility:edit">
+        <lightning-datatable
+            key-field="Id"
+            data={boats}
+            columns={columns}
+            draft-values={draftValues}
+            onsave={handleSave}
+            hide-checkbox-column>
+        </lightning-datatable>
+    </lightning-card>
+</template>

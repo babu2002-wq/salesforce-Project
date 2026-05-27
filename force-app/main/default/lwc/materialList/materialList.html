@@ -1,0 +1,24 @@
+<template>
+    <lightning-button label="Back" onclick={goBack}></lightning-button>
+
+    <template for:each={materials} for:item="mat">
+        <div key={mat.id} class="material-card">
+            <strong>{mat.name}</strong>
+
+            <template if:true={mat.completed}>
+                <lightning-badge label="Completed" class="slds-m-left_small"></lightning-badge>
+            </template>
+
+            <template for:each={mat.files} for:item="file">
+                <div key={file.documentId}>
+                    <lightning-button
+                        label="View"
+                        data-docid={file.documentId}
+                        onclick={viewFile}>
+                    </lightning-button>
+                    {file.title}
+                </div>
+            </template>
+        </div>
+    </template>
+</template>

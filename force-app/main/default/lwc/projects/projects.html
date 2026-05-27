@@ -1,0 +1,43 @@
+<template>
+    <lightning-card title="My Projects">
+        <template if:true={employeeProject}>
+            <div class="slds-m-around_medium">
+                <p><strong>Current Project:</strong> {employeeProject.Project__r.Name}</p>
+                <lightning-button label="Assign Project" onclick={showDropdown}
+                    class="slds-m-top_medium"></lightning-button>
+                <template if:true={showProjectDropdown}>
+                    <lightning-combobox label="Select Project" value={selectedProject} placeholder="Choose a Project"
+                        options={projectOptions} onchange={handleProjectSelection}>
+                    </lightning-combobox>
+                    <lightning-button label="Update Project" onclick={handleUpdateProject} class="slds-m-top_medium"
+                        variant="brand"></lightning-button>
+                    <lightning-button label="Cancel" onclick={handlecancel} class="slds-m-top_medium"
+                        variant="neutral"></lightning-button>
+                </template>
+            </div>
+        </template>
+
+        <template if:false={employeeProject}>
+            <div class="slds-m-around_medium">
+                <p><strong>Current Project:</strong> No project assigned</p>
+                <lightning-button label="Assign Project" onclick={showDropdown}
+                    class="slds-m-top_medium"></lightning-button>
+                <template if:true={showProjectDropdown}>
+                    <lightning-combobox label="Select Project" value={selectedProject} placeholder="Choose a Project"
+                        options={projectOptions} onchange={handleProjectSelection}>
+                    </lightning-combobox>
+                    <lightning-button label="Update Project" onclick={handleUpdateProject} class="slds-m-top_medium"
+                        variant="brand"></lightning-button>
+                    <lightning-button label="Cancel" onclick={handlecancel} class="slds-m-top_medium"
+                        variant="neutral"></lightning-button>
+                </template>
+            </div>
+        </template>
+        <template if:true={successMessage}>
+            <p class="slds-text-color_success">{successMessage}</p>
+        </template>
+        <template if:true={errorMessage}>
+            <p class="slds-text-color_error">{errorMessage}</p>
+        </template>
+    </lightning-card>
+</template>

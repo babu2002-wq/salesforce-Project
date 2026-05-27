@@ -1,0 +1,44 @@
+<template>
+    <lightning-card title="Registered Names" icon-name="standard:contact">
+        <template if:true={Registrations}>
+            <template for:each={Registrations} for:item="reg">
+                <div key={reg.Id} class="slds-p-left_medium slds-p-vertical_x-small">
+
+                    <h3>
+                        <a class="register-title" data-id={reg.Id} onclick={handleRegClick}>
+                            {reg.Name}
+                        </a>
+                    </h3>
+
+                    <template if:true={reg.isSelected}>
+                        <div class="register-details slds-m-top_medium">
+                            <lightning-record-edit-form object-api-name="Registration__c" record-id={reg.Id}
+                                onsuccess={handleSuccess}>
+
+                                <lightning-output-field field-name="Name"></lightning-output-field>
+                                <lightning-output-field field-name="Email__c"></lightning-output-field>
+                                <lightning-output-field field-name="Event__c"></lightning-output-field>
+
+                                <lightning-input-field field-name="Status__c"></lightning-input-field>
+
+                                <lightning-button class="slds-m-top_small" type="submit" label="Update Status"
+                                    variant="brand">
+                                </lightning-button>
+                                <lightning-button label="Cancel" variant="neutral" onclick={handleCancelDetails} data-id={reg.Id}></lightning-button>
+                            </lightning-record-edit-form>
+
+
+                        </div>
+
+                    </template>
+
+                </div>
+            </template>
+        </template>
+
+        <template if:true={error}>
+            <p class="slds-text-color_error slds-p-around_medium">Error loading registrations</p>
+        </template>
+
+    </lightning-card>
+</template>

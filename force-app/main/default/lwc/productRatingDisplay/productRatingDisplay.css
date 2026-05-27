@@ -1,0 +1,48 @@
+.rating-container {
+    padding: 10px;
+}
+
+.rating-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.stars {
+    display: flex;
+}
+
+.star {
+    font-size: 20px;
+    color: lightgray;
+}
+
+.filled {
+    color: orange;
+}
+
+/* Half star effect */
+.half {
+    background: linear-gradient(90deg, orange 50%, lightgray 50%);
+
+    /* Standard property */
+    background-clip: text;
+
+    /* WebKit support */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Optional fallback */
+    color: transparent;
+}
+
+.rating-text {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.review-count {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #555;
+}

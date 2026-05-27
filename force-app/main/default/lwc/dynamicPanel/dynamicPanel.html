@@ -1,0 +1,14 @@
+<template>
+    <lightning-tabset>
+        <lightning-tab label="Interviewer Panel"  onclick={switchToInterviewer}>
+            <template if:true={isInterviewPanel}>
+                <c-interview-panel></c-interview-panel>
+            </template>
+        </lightning-tab>
+        <lightning-tab label="User Panel"  onclick={switchToUser}>
+            <template if:true={isUserPanel}>
+                <c-user-panel></c-user-panel>
+            </template>
+        </lightning-tab>
+    </lightning-tabset>
+</template>

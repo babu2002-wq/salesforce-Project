@@ -1,0 +1,104 @@
+<template>
+    <lightning-card title="Newsletter Subscription" icon-name="utility:email">
+        <div class="slds-m-around_medium">
+
+            <!-- Form - shown only if not yet submitted (first time) -->
+            <template if:false={hasSubmitted}>
+                <template if:true={isLoggedIn}>
+                    <p>Update your newsletter preferences.</p>
+                </template>
+                <template if:false={isLoggedIn}>
+                    <p>Sign up for our newsletter.</p>
+                </template>
+
+                <lightning-spinner alternative-text="Loading" if:true={isLoading}></lightning-spinner>
+
+                <div class="slds-form-element">
+                    <lightning-input 
+                        label="First Name" 
+                        value={firstName} 
+                        onchange={handleInputChange} 
+                        data-field="firstName" 
+                        required>
+                    </lightning-input>
+                </div>
+
+                <div class="slds-form-element">
+                    <lightning-input 
+                        label="Last Name" 
+                        value={lastName} 
+                        onchange={handleInputChange} 
+                        data-field="lastName" 
+                        required>
+                    </lightning-input>
+                </div>
+
+                <div class="slds-form-element">
+                    <lightning-input 
+                        type="email" 
+                        label="Email" 
+                        value={email} 
+                        onchange={handleInputChange} 
+                        data-field="email" 
+                        required>
+                    </lightning-input>
+                </div>
+
+                <div class="slds-m-top_medium">
+                    <lightning-button 
+                        variant="brand" 
+                        label="Subscribe" 
+                        onclick={handleInitialSubmit} 
+                        disabled={isLoading}>
+                    </lightning-button>
+                </div>
+
+                <!-- Error message for validation -->
+                <template if:true={errorMessage}>
+                    <div class="slds-text-color_error slds-m-top_small">{errorMessage}</div>
+                </template>
+            </template>
+
+            <!-- Confirmation view - shown after first submit and always thereafter -->
+            <template if:true={hasSubmitted}>
+                <div class="slds-text-align_center slds-p-around_medium">
+                    <lightning-icon 
+                        icon-name={iconName} 
+                        alternative-text="Status" 
+                        size="large" 
+                        variant={iconVariant}>
+                    </lightning-icon>
+                    
+                    <p class="slds-text-heading_small slds-m-top_small">
+                        {confirmationMessage}
+                    </p>
+
+                    <div class="slds-m-top_large">
+                        <lightning-input 
+                            type="checkbox" 
+                            label="Subscribed to Newsletter" 
+                            checked={isSubscribed} 
+                            onchange={handleCheckboxChange}>
+                        </lightning-input>
+                    </div>
+
+                    <lightning-button 
+                        variant="brand" 
+                        label="Update Subscription" 
+                        onclick={handleUpdate} 
+                        class="slds-m-top_medium" 
+                        disabled={isLoading}>
+                    </lightning-button>
+
+                    <lightning-spinner alternative-text="Saving" if:true={isLoading} size="small"></lightning-spinner>
+
+                    <!-- Error message in confirmation view -->
+                    <template if:true={errorMessage}>
+                        <div class="slds-text-color_error slds-m-top_medium">{errorMessage}</div>
+                    </template>
+                </div>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>

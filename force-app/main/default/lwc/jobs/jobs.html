@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Current Openings" icon-name="custom:custom63">
+        <div class="slds-grid slds-wrap">
+            <template if:true={jobAdvertisements}>
+                <template for:each={jobAdvertisements} for:item="job">
+                    <div key={job.Id} class="slds-box slds-m-around_medium job-card">
+                        <!-- Job Title -->
+                        <h3>
+                            <a href="javascript:void(0);" class="job-title" data-id={job.Id} onclick={handleJobClick}>
+                                {job.Job_Title__c}
+                            </a>
+                        </h3>
+                        
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

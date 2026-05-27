@@ -1,0 +1,13 @@
+<template>
+    <div class="header">
+        <div class="employee-name">         
+            <template if:true={adminpr}>
+                <p>Hi, {adminpr.Name}!</p>
+            </template>
+        </div>
+        <div class="logout-button">
+            <!-- Logout Button -->
+            <lightning-button label="Logout" onclick={handleLogout} variant="destructive"></lightning-button>
+        </div>
+    </div>
+</template>

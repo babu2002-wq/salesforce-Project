@@ -1,0 +1,15 @@
+.recent {
+    color: brown; 
+}
+
+.older {
+    color: green; 
+}
+
+.clicked {
+    color: blue; 
+}
+
+span {
+    cursor: pointer; 
+}

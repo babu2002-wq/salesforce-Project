@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Recent Employees">
+        <template if:true={employees}>
+            <div class="slds-m-around_medium">
+            <ul>
+                <template for:each={employees} for:item="employee">
+                    <li key={employee.Id}>
+                        <lightning-formatted-text value={employee.Name}></lightning-formatted-text>
+                    </li>
+                </template>
+            </ul>
+        </div>
+        </template>
+        <template if:false={employees}>
+            <p>No recent employees found.</p>
+        </template>
+        <lightning-button label="View All Employees" onclick={handleViewAllClick}  variant="brand"></lightning-button>
+        <lightning-button label="Cancel" onclick={handleCancel}  variant="neutral"></lightning-button>
+
+        <template if:true={viewAllClicked}>
+            <c-allemployees></c-allemployees> 
+        </template>
+    </lightning-card>
+</template>

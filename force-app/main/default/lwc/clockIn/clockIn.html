@@ -1,0 +1,21 @@
+<template>
+    <div class="slds-p-around_medium">
+        <lightning-button
+            variant="brand"
+            label={clockLabel}
+            onclick={handleClockButtonClick}>
+        </lightning-button>
+
+        <template if:true={clockInDisplay}>
+            <p class="slds-m-top_medium">Clock In: {clockInDisplay}</p>
+        </template>
+
+        <template if:true={clockOutDisplay}>
+            <p>Clock Out: {clockOutDisplay}</p>
+        </template>
+
+        <template if:true={totalHours}>
+            <p>Total Hours: {totalHours}</p>
+        </template>
+    </div>
+</template>

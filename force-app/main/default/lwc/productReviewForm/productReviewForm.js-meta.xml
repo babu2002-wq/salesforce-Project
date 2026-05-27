@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <!-- Makes the component draggable in Experience Builder -->
+        <target>lightningCommunity__Page</target>
+        <!-- Enables editable properties in the builder -->
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <!-- Properties defined here will be editable when the component is placed on a page -->
+        <targetConfig targets="lightningCommunity__Default">
+            <property 
+                name="productId" 
+                type="String" 
+                label="Product Id" 
+                description="Product to associate the review with. Usually auto-populated from page context."
+                default="{!recordId}" />  <!-- Optional: use {!recordId} if on a record page -->
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

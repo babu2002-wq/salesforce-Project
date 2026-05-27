@@ -1,0 +1,17 @@
+<template>
+    <div class="slds-grid slds-wrap slds-align_absolute-center slds-is-relative" style="min-height: 80vh;">
+        <lightning-card class="slds-size_4-of-12" title="Login" style="padding: 20px; margin-top: -100px;">
+            <div class="slds-p-around_medium">
+             <lightning-input label="Username" value={username} onchange={handleusername} required></lightning-input>
+             <lightning-input label="Password" value={password} onchange={handlepassword} type="password" required></lightning-input>
+             <div class="slds-m-top_small">
+                <lightning-button variant="brand" label="Login" onclick={handlelogin} class="slds-m-right_x-small"></lightning-button>
+                <lightning-button variant="neutral" label="Register" onclick={handleregister}></lightning-button>
+             </div>
+        <template if:true={error}>
+            <div class="slds-text-color_error slds-m-top_small">{error}</div>
+        </template>
+        </div>
+    </lightning-card>
+</div>
+</template>

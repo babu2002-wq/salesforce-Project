@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Interviewer Panel">
+        <template if:true={applications}>
+            <template for:each={applications} for:item="app">
+                <div key={app.Id} class="application-item">
+                    <p>{app.Applicant_Name__c} - {applicationDetails.Stage__c}</p>
+                    <lightning-button label="Passed" onclick={handlePass} data-id={app.Id}></lightning-button>
+                    <lightning-button label="Rejected" onclick={handleReject} data-id={app.Id}></lightning-button>
+                </div>
+            </template>
+        </template>
+        <template if:false={applications}>
+            <p>No applications found</p>
+        </template>
+    </lightning-card>
+</template>

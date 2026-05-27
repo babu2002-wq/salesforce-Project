@@ -1,0 +1,15 @@
+<template>
+    <lightning-button label="Back" onclick={goBack}></lightning-button>
+
+    <template for:each={topics} for:item="topic">
+        <div key={topic.id}
+             class="topic-card"
+             data-id={topic.id}
+             onclick={openTopic}>
+            {topic.name}
+            <template if:true={topic.completed}>
+                <lightning-badge label="Completed"></lightning-badge>
+            </template>
+        </div>
+    </template>
+</template>

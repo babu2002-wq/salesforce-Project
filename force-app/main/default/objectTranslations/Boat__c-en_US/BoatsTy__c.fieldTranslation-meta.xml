@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- BoatsTy --></label>
+    <name>BoatsTy__c</name>
+    <picklistValues>
+        <masterLabel>Crab Boat</masterLabel>
+        <translation><!-- Crab Boat --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mega Yacht</masterLabel>
+        <translation><!-- Mega Yacht --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sports Yacht</masterLabel>
+        <translation><!-- Sports Yacht --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Trawler</masterLabel>
+        <translation><!-- Trawler --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tuna Boat</masterLabel>
+        <translation><!-- Tuna Boat --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

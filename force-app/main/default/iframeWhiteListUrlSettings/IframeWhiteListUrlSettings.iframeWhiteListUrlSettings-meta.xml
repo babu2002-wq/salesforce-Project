@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IframeWhiteListUrlSettings xmlns="http://soap.sforce.com/2006/04/metadata">
+    <iframeWhiteListUrls>
+        <context>LightningOut</context>
+        <url>https://c.paypal.com</url>
+    </iframeWhiteListUrls>
+    <iframeWhiteListUrls>
+        <context>LightningOut</context>
+        <url>https://www.paypal.com</url>
+    </iframeWhiteListUrls>
+</IframeWhiteListUrlSettings>

@@ -1,0 +1,60 @@
+<template>
+
+    <!-- ADDRESS LIST -->
+    <template if:true={addresses.length}>
+        <template for:each={addresses} for:item="addr">
+            <div key={addr.id} class="slds-box slds-m-bottom_small">
+
+                <div class="slds-grid slds-grid_align-spread">
+
+                    <div>
+                        <lightning-input
+                            type="radio"
+                            name="addressRadio"
+                            value={addr.id}
+                            checked={addr.isSelected}
+                            onchange={handleSelect}>
+                        </lightning-input>
+
+                        <p><strong>{addr.firstName} {addr.middleName} {addr.lastName}</strong></p>
+                        <p>{addr.companyName}</p>
+                        <p>{addr.street}, {addr.city}</p>
+                        <p>{addr.state}, {addr.postalCode}</p>
+                        <p>{addr.country}</p>
+                    </div>
+
+                    <!-- Edit only for selected -->
+                    <template if:true={addr.showEdit}>
+                        <div>
+                            <a href="javascript:void(0);"
+                               data-id={addr.id}
+                               onclick={handleEdit}>
+                               Edit
+                            </a>
+                        </div>
+                    </template>
+
+                </div>
+
+            </div>
+        </template>
+    </template>
+
+    <!-- NEW ADDRESS BUTTON -->
+    <div class="slds-m-top_medium">
+        <lightning-button
+            label="New Address"
+            onclick={handleNew}>
+        </lightning-button>
+    </div>
+
+    <!-- MODAL -->
+    <template if:true={showModal}>
+        <c-checkout-address-modal
+            address-data={editingAddress}
+            onclose={handleClose}
+            onsaved={handleSaved}>
+        </c-checkout-address-modal>
+    </template>
+
+</template>

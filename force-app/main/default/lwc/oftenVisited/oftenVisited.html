@@ -1,0 +1,49 @@
+<template>
+    <template if:true={showComponent}>
+
+        <div class="container">
+            <h2 class="title">You Often Visited</h2>
+
+            <!-- GRID -->
+            <template if:false={isCarousel}>
+                <div class="grid">
+                    <template for:each={products} for:item="p">
+                        <div key={p.id}
+                             class="card"
+                             data-id={p.id}
+                             onclick={handleClick}>
+
+                            <img src={p.imageUrl} class="image"/>
+
+                            <p class="name">{p.name}</p>
+
+                            
+                        </div>
+                    </template>
+                </div>
+            </template>
+
+            <!-- CAROUSEL -->
+            <template if:true={isCarousel}>
+                <div class="carousel">
+                    <template for:each={products} for:item="p">
+                        <div key={p.id}
+                             class="card"
+                             data-id={p.id}
+                             onclick={handleClick}>
+
+                            <img src={p.imageUrl} class="image"/>
+
+                            <p class="name">{p.name}</p>
+
+                    
+
+                        </div>
+                    </template>
+                </div>
+            </template>
+
+        </div>
+
+    </template>
+</template>

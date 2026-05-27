@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Waterbottle Color --></label>
+    <name>Waterbottle_Color__c</name>
+    <picklistValues>
+        <masterLabel>blue</masterLabel>
+        <translation><!-- blue --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>green</masterLabel>
+        <translation><!-- green --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>red</masterLabel>
+        <translation><!-- red --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>white</masterLabel>
+        <translation><!-- white --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

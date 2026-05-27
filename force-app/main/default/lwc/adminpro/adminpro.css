@@ -1,0 +1,16 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f4f6f9;
+}
+
+.employee-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.logout-button lightning-button {
+    margin-left: auto;
+}

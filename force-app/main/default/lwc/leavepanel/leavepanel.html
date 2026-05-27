@@ -1,0 +1,45 @@
+<template>
+    <lightning-card title="Leave Approval Panel">
+        <template if:true={pendingLeaves}>
+            <div class="slds-m-around_medium">
+                <ul class="slds-list_dotted">
+                    <template for:each={pendingLeaves} for:item="request">
+                        <li key={request.Id}>
+                            <span onclick={handleSelect} data-id={request.Id} class="cursor-pointer">
+                                {request.Employee_Name__r.Name}
+                            </span>
+                        </li>
+                    </template>
+                </ul>
+            </div>
+        </template>
+
+        
+        <template if:true={selectedLeave}>
+            <div class="slds-m-around_medium">
+                <h2><strong>Leave Details for {selectedLeave.Employee_Name__r.Name}</strong></h2>
+                <p><strong>Start Date:</strong> {selectedLeave.Start_Date__c}</p>
+                <p><strong>End Date:</strong> {selectedLeave.End_Date__c}</p>
+                <p><strong>Leave Type:</strong> {selectedLeave.Leave_Type__c}</p>
+                <p><strong>Reason:</strong> {selectedLeave.Reason_for_leave__c}</p>
+
+                <template if:true={showRejectReason}>
+                    <lightning-textarea label="Rejection Reason" value={rejectionReason}
+                        placeholder="Provide reason if rejecting..." class="slds-m-bottom_small"
+                        onchange={handleRejectionReasonChange}>
+                    </lightning-textarea>
+                </template>
+
+                <lightning-button label="Approve" variant="brand" onclick={handleApprove} class="slds-m-right_small">
+                </lightning-button>
+                <lightning-button label="Reject" variant="destructive" onclick={handleReject}>
+                </lightning-button>
+            </div>
+        </template>
+
+        <!-- Display error message if data fails to load -->
+        <template if:true={error}>
+            <p>Error loading leave requests: {error.message}</p>
+        </template>
+    </lightning-card>
+</template>

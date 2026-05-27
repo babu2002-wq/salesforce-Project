@@ -1,0 +1,17 @@
+<template>
+    <lightning-layout multiple-rows>
+        <template for:each={pagedCourses} for:item="course">
+            <lightning-layout-item key={course.id} size="12">
+                <div class="course-card" onclick={openCourse} data-id={course.id}>
+                    <strong>{course.name}</strong>
+                    <lightning-badge label={course.percentLabel}></lightning-badge>
+                </div>
+            </lightning-layout-item>
+        </template>
+    </lightning-layout>
+
+    <div class="slds-m-top_medium">
+        <lightning-button label="Previous" onclick={prevPage}></lightning-button>
+        <lightning-button label="Next" onclick={nextPage}></lightning-button>
+    </div>
+</template>

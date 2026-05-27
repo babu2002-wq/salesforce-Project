@@ -1,0 +1,49 @@
+<template>
+    <lightning-card title="Accounts & Opportunities Explorer">
+
+        <!-- Accounts & Opportunities List -->
+        <template for:each={accounts} for:item="acc">
+            <div key={acc.accountId} class="slds-m-around_small">
+
+                <!-- Account link -->
+                <button class="slds-button slds-button_reset slds-text-link" onclick={handleAccountClick}
+                    data-id={acc.accountId}>
+                    <b>{acc.accountName}</b>
+                </button>
+
+
+
+                <!-- Show Opportunities -->
+                <template if:true={acc.showOpps}>
+                    <ul class="slds-m-left_large slds-m-top_xx-small">
+                        <template for:each={acc.opportunities} for:item="opp">
+                            <li key={opp.oppId}>
+                                <button class="slds-button slds-button_reset slds-text-link" onclick={handleOppClick}
+                                    data-id={opp.oppId}>
+                                    <b>{opp.oppName} — ₹{opp.amount}</b>
+                                </button>
+                            </li>
+                        </template>
+                    </ul>
+                </template>
+
+            </div>
+        </template>
+
+        <!-- Opportunity Line Items Datatable -->
+        <template if:true={lineItems}>
+            <div class="slds-m-around_medium">
+                <lightning-datatable key-field="lineItemId" data={lineItems} columns={columns}
+                    hide-checkbox-column="true">
+                </lightning-datatable>
+
+                <!-- GRAND TOTALS -->
+                <div class="slds-box slds-theme_shade slds-m-top_small">
+                    <p><b>Total Quantity:</b> {totalQuantity}</p>
+                    <p><b>Total Amount:</b> ₹ {totalRevenue}</p>
+                </div>
+            </div>
+        </template>
+
+    </lightning-card>
+</template>

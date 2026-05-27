@@ -1,0 +1,28 @@
+<template>
+    <div class="rating-container">
+        
+        <h2 class="slds-text-heading_medium slds-m-bottom_small">
+            Customer reviews
+        </h2>
+
+        <div class="rating-row">
+            <!-- Stars -->
+            <div class="stars">
+                <template for:each={starList} for:item="star">
+                    <span key={star.index} class={star.class}>★</span>
+                </template>
+            </div>
+
+            <!-- Rating Text -->
+            <span class="rating-text">
+                {formattedRating} out of 5
+            </span>
+        </div>
+
+        <!-- Total Reviews -->
+        <div class="review-count">
+            {totalReviews} global ratings
+        </div>
+
+    </div>
+</template>

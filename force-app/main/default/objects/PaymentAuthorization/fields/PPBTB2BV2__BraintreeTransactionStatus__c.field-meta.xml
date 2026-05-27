@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PPBTB2BV2__BraintreeTransactionStatus__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Braintree Transaction Status</description>
+    <externalId>false</externalId>
+    <label>Braintree Transaction Status</label>
+    <length>64</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

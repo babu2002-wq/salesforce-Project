@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Date_Fields</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR( Start_Date__c &lt;= TODAY() , End_Date__c &lt;= TODAY())</errorConditionFormula>
+    <errorMessage>Start Date and End Date must be future dates.</errorMessage>
+</ValidationRule>

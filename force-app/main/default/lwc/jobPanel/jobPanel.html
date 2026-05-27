@@ -1,0 +1,43 @@
+<template>
+    <lightning-card title="Job Panel" icon-name="custom:custom63">
+        <div class="slds-grid slds-wrap">
+            <template if:true={jobAdvertisements}>
+                <template for:each={jobAdvertisements} for:item="job">
+                    <div key={job.Id} class="slds-box slds-m-around_medium job-card">
+                        <!-- Job Title -->
+                        <h3>
+                            <a href="javascript:void(0);" class="job-title" data-id={job.Id} onclick={handleJobClick}>
+                                {job.Job_Title__c}
+                            </a>
+                        </h3>
+
+                        <!-- Job Details (Toggleable Section) -->
+                        <template if:true={job.isSelected}>
+                            <div class="job-details slds-m-top_medium">
+                                <p><strong>Roles and Responsibilities:</strong> {job.Roles_and_Responsibilities__c}</p>
+                                <p><strong>Years of Experience:</strong> {job.Years_of_Experience__c}</p>
+
+                                <!-- Edit and Cancel Buttons -->
+                                <lightning-button-group>
+                                    <lightning-button label="Edit" variant="brand" onclick={handleEdit} data-id={job.Id}></lightning-button>
+                                    <lightning-button label="Cancel" variant="neutral" onclick={handleCancelDetails} data-id={job.Id}></lightning-button>
+                                </lightning-button-group>
+
+                                <!-- Edit Form -->
+                                <template if:true={job.isEditing}>
+                                    <lightning-record-edit-form object-api-name="JobAdvertisement__c" record-id={job.Id} onsuccess={handleSaveSuccess}>
+                                        <lightning-messages></lightning-messages>
+                                        <lightning-input-field field-name="Roles_and_Responsibilities__c"></lightning-input-field>
+                                        <lightning-input-field field-name="Years_of_Experience__c"></lightning-input-field>
+                                        <lightning-button variant="brand" type="submit" label="Save"></lightning-button>
+                                        <lightning-button label="Cancel" onclick={handleCancelEdit}></lightning-button>
+                                    </lightning-record-edit-form>
+                                </template>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

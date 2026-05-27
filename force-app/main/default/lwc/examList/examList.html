@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="My Exams">
+        <lightning-datatable
+            key-field="Id"
+            data={exams}
+            columns={columns}
+            onrowaction={handleRowAction}>
+        </lightning-datatable>
+    </lightning-card>
+</template>

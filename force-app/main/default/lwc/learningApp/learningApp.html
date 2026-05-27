@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Learning Portal">
+        <template if:true={showCourses}>
+            <c-course-list oncourseclick={handleCourseClick}></c-course-list>
+        </template>
+
+        <template if:true={showTopics}>
+            <c-topic-list
+                course-id={selectedCourseId}
+                onback={goBackToCourses}
+                ontopicclick={handleTopicClick}>
+            </c-topic-list>
+        </template>
+
+        <template if:true={showMaterials}>
+            <c-material-list
+                topic-id={selectedTopicId}
+                onback={goBackToTopics}>
+            </c-material-list>
+        </template>
+    </lightning-card>
+</template>

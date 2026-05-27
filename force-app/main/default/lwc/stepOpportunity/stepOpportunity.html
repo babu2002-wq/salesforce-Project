@@ -1,0 +1,17 @@
+<template>
+<lightning-input label="Opportunity Name" data-field="Name" required onchange={handleChange}></lightning-input>
+<lightning-input label="Amount" data-field="Amount" type="number" required onchange={handleChange}></lightning-input>
+
+<div class="slds-m-top_medium">
+    <lightning-button label="Previous" onclick={previous}></lightning-button>
+    <lightning-button
+        variant="brand"
+        label="Next"
+        disabled={disableNext}
+        onclick={next}>
+    </lightning-button>
+</div>
+
+
+    
+</template>

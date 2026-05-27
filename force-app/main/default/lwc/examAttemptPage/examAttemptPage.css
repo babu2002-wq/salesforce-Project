@@ -1,0 +1,42 @@
+.exam-layout {
+    display: flex;
+    gap: 16px;
+}
+
+.question-area {
+    flex: 3;
+    padding: 12px;
+}
+
+.nav-area {
+    flex: 1;
+    padding: 12px;
+    border-left: 1px solid #eee;
+}
+
+.nav-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 40px);
+    gap: 6px;
+    margin-top: 12px;
+}
+
+.nav-btn {
+    width: 40px;
+    height: 36px;
+    border: none;
+    border-radius: 4px;
+}
+
+.nav-btn.answered { background-color: #28a745; color: #fff; }
+.nav-btn.not-answered { background-color: #dc3545; color: #fff; }
+.nav-btn.marked { background-color: #6f42c1; color: #fff; }
+.nav-btn.not-visited { background-color: #6c757d; color: #fff; }
+
+.legend { display:flex; gap:8px; flex-wrap:wrap; }
+.legend .sw { display:inline-block; width:12px; height:12px; margin-right:6px; vertical-align:middle; }
+.sw.answered { background: #28a745; } .sw.not-answered { background: #dc3545; }
+.sw.marked { background: #6f42c1; } .sw.not-visited { background: #6c757d; }
+
+.action-buttons { margin-top: 16px; display:flex; gap:8px; }
+.checkbox-row { margin:6px 0; }

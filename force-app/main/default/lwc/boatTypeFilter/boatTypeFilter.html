@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Select Boat Type">
+        <div class="slds-p-around_medium">
+            <!-- Dropdown -->
+            <lightning-combobox
+                name="boatType"
+                label="Boat Type"
+                value={selectedType}
+                placeholder="Choose a type"
+                options={boatTypeOptions}
+                onchange={handleChange}>
+            </lightning-combobox>
+
+            <!-- New Boat Button -->
+            <div class="slds-m-top_medium">
+                <lightning-button 
+                    label="New Boat"
+                    variant="brand"
+                    onclick={handleNewBoat}>
+                </lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

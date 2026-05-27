@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Department</fullName>
+    <columns>NAME</columns>
+    <columns>Department__c</columns>
+    <columns>Project__c</columns>
+    <columns>User_Type__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>User_Type__c</field>
+        <operation>equals</operation>
+        <value>Admin</value>
+    </filters>
+    <label>Department</label>
+</ListView>

@@ -1,0 +1,7 @@
+<template>
+    <lightning-button label="Apply for a Leave" onclick={showLeaveForm} variant="warning" class="large-button"></lightning-button>
+
+    <template if:true={showForm}>
+        <c-apply-leave oncancel={handleCancel}></c-apply-leave>
+    </template>
+</template>

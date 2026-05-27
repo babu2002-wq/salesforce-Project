@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_Dates_Within_Course</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(
+  Date__c &lt; Contact__r.Batch__r.Start_Date__c,
+  Date__c &gt; Contact__r.Batch__r.End_Date__c
+)</errorConditionFormula>
+    <errorMessage>Attendance date must be within the course start and end date.</errorMessage>
+</ValidationRule>

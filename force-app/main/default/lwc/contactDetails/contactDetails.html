@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Contact Details">
+
+        <div class="slds-p-around_medium">
+            <lightning-input label="First Name" data-field="firstName" onchange={handleChange}></lightning-input>
+            <lightning-input label="Last Name *" required data-field="lastName" onchange={handleChange}></lightning-input>
+            <lightning-input label="Email *" required type="email" data-field="email" onchange={handleChange}></lightning-input>
+            <lightning-input label="Phone" type="tel" data-field="phone" onchange={handleChange}></lightning-input>
+        </div>
+
+    </lightning-card>
+</template>

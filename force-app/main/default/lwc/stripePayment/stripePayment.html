@@ -1,0 +1,31 @@
+<template>
+
+    <div class="slds-box">
+
+        <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+            Credit Card Payment
+        </h2>
+
+        <!-- Stripe Card Form -->
+        <div lwc:dom="manual" class="card-container"></div>
+
+        <div class="slds-m-top_medium">
+
+            <lightning-button
+                label="Pay Now"
+                variant="brand"
+                onclick={handlePayment}
+                disabled={isProcessing}>
+            </lightning-button>
+
+        </div>
+
+        <template if:true={errorMsg}>
+            <div class="slds-text-color_error slds-m-top_small">
+                {errorMsg}
+            </div>
+        </template>
+
+    </div>
+
+</template>

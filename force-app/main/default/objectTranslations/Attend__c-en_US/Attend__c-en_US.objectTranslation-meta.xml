@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Attend</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Attends</value>
+    </caseValues>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Attendance date must be within the course start and end date. --></errorMessage>
+        <name>Restrict_Dates_Within_Course</name>
+    </validationRules>
+</CustomObjectTranslation>

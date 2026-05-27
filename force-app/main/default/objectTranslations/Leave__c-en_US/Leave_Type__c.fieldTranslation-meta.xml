@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Leave Type --></label>
+    <name>Leave_Type__c</name>
+    <picklistValues>
+        <masterLabel>Casual Leave</masterLabel>
+        <translation><!-- Casual Leave --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Halfday Leave</masterLabel>
+        <translation><!-- Halfday Leave --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Short Leave</masterLabel>
+        <translation><!-- Short Leave --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Unpaid Leave</masterLabel>
+        <translation><!-- Unpaid Leave --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

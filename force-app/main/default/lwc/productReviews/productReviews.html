@@ -1,0 +1,39 @@
+<template>
+
+    <template if:true={formattedReviews}>
+
+        <template for:each={formattedReviews} for:item="review">
+
+            <div key={review.id} class="review-card">
+
+                <p><strong>{review.name}</strong></p>
+
+                <!-- ⭐ Stars -->
+                <div class="stars">
+                    <template for:each={review.stars} for:item="star">
+                        <span key={star.id}>
+                            <template if:true={star.filled}>⭐</template>
+                            <template if:false={star.filled}>☆</template>
+                        </span>
+                    </template>
+                </div>
+
+                <p><strong>{review.title}</strong></p>
+
+                <p class="date">
+                    Reviewed on {review.date}
+                </p>
+
+                <p>{review.comment}</p>
+
+            </div>
+
+        </template>
+
+    </template>
+
+    <template if:false={formattedReviews}>
+        <p>No reviews yet</p>
+    </template>
+
+</template>

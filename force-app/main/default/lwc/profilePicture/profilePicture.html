@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Upload Profile Picture">
+        <!-- Upload button -->
+        <lightning-file-upload
+            label="Upload JPG/JPEG"
+            name="fileUploader"
+            accept=".jpg,.jpeg"
+            record-id={contactId}
+            onuploadfinished={handleUploadFinished}
+            >
+        </lightning-file-upload>
+
+        <!-- Show picture if available -->
+        <template if:true={profilePictureUrl}>
+            <div class="slds-m-top_medium slds-align_absolute-center">
+                <img src={profilePictureUrl} alt="Profile Picture"
+                     style="max-width:150px; border-radius:50%;" />
+            </div>
+        </template>
+    </lightning-card>
+</template>

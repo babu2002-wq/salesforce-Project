@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Create Contact + Case">
+
+        <c-contact-details></c-contact-details>
+
+        <c-address-details class="slds-m-top_medium"></c-address-details>
+
+        <c-case-details class="slds-m-top_medium"></c-case-details>
+
+        <div class="slds-m-top_medium">
+            <div class="captcha"></div>
+        </div>
+
+        <div class="slds-m-top_large">
+            <lightning-button variant="brand"
+                              label="Submit"
+                              onclick={handleSubmit}>
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

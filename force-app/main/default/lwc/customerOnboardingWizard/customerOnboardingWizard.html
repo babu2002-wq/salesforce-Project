@@ -1,0 +1,45 @@
+<template>
+<lightning-card title="New Customer Onboarding">
+
+    <lightning-tabset active-tab-value={activeTab} variant="scoped">
+
+        <lightning-tab label="Account" value="1">
+            <c-step-account
+                account={account}
+                onnext={handleNext}>
+            </c-step-account>
+        </lightning-tab>
+
+        <lightning-tab label="Contact" value="2" disabled={disableTab2}>
+            <c-step-contact
+                contact={contact}
+                onnext={handleNext}
+                onprevious={handlePrevious}>
+            </c-step-contact>
+        </lightning-tab>
+
+        <lightning-tab label="Opportunity" value="3" disabled={disableTab3}>
+            <c-step-opportunity
+                opportunity={opportunity}
+                onnext={handleNext}
+                onprevious={handlePrevious}>
+            </c-step-opportunity>
+        </lightning-tab>
+
+        <lightning-tab label="Review" value="4" disabled={disableTab4}>
+            <c-step-review
+                account={account}
+                contact={contact}
+                employment={employment}
+                opportunity={opportunity}
+                onprevious={handlePrevious}
+                onsubmit={handleSubmit}>
+            </c-step-review>
+        </lightning-tab>
+
+    </lightning-tabset>
+
+</lightning-card>
+
+    
+</template>

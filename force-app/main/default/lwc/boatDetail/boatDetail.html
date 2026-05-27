@@ -1,0 +1,20 @@
+<template>
+    <template if:true={boat}>
+        <lightning-card title={boat.Name} icon-name="custom:custom63">
+            <div class="slds-m-around_medium">
+                <p><strong>Boat Type:</strong> {boat.BoatType__r.Name}</p>
+                <p><strong>Length:</strong> {boat.Length__c} ft</p>
+                <p><strong>Price:</strong> ${boat.Price__c}</p>
+            </div>
+            <lightning-button label="View Details" onclick={viewBoatDetails}></lightning-button>
+        </lightning-card>
+    </template>
+
+    <template if:false={boat}>
+        <lightning-card title="Select a Boat" icon-name="custom:custom63">
+            <div class="slds-m-around_medium">
+                <p>Please select a boat to see details.</p>
+            </div>
+        </lightning-card>
+    </template>
+</template>

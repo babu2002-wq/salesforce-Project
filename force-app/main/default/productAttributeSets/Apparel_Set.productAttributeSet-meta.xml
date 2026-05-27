@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProductAttributeSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <developerName>Apparel_Set</developerName>
+    <masterLabel>Apparel Set</masterLabel>
+    <productAttributeSetItems>
+        <field>Color__c</field>
+        <isGroupedBy>false</isGroupedBy>
+        <sequence>0</sequence>
+    </productAttributeSetItems>
+    <productAttributeSetItems>
+        <field>Size__c</field>
+        <isGroupedBy>false</isGroupedBy>
+        <sequence>1</sequence>
+    </productAttributeSetItems>
+</ProductAttributeSet>
