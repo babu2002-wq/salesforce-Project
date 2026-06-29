@@ -1,8 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <AssignmentRules xmlns="http://soap.sforce.com/2006/04/metadata">
     <assignmentRule>
-        <fullName>Standard</fullName>
+        <fullName>Company Revenue</fullName>
         <active>true</active>
+        <ruleEntry>
+            <assignedTo>Fulfillment_Team</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.AnnualRevenue</field>
+                <operation>greaterThan</operation>
+                <value>&quot;INR 50,000&quot;</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>ashisranjan.cybrain@gmail.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <criteriaItems>
+                <field>Lead.City</field>
+                <operation>equals</operation>
+                <value>Delhi</value>
+            </criteriaItems>
+        </ruleEntry>
+    </assignmentRule>
+    <assignmentRule>
+        <fullName>Standard</fullName>
+        <active>false</active>
         <ruleEntry>
             <assignedTo>ashisdash96@gmail.com</assignedTo>
             <assignedToType>User</assignedToType>
